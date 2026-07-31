@@ -42,7 +42,7 @@ The app allows users to create, organise, search, and manage tasks with priority
 
 ## How It Works
 
-Tasks are stored inside a JavaScript array which acts as the source of truth.
+Tasks are managed using a JavaScript array that stores the current application state. Any changes update the array, save the data to Local Storage, and refresh the interface.
 
 When a task is added, edited, completed, or deleted:
 
@@ -56,9 +56,13 @@ This means tasks remain available even after refreshing the page.
 
 ## Screenshots
 
-_Add screenshots of your application here._
+### Main Interface
 
-Example:
+![Task Tracker Main Screenshot](screenshots/task-tracker-main.png)
+
+### Dark Mode
+
+![Task Tracker Dark Mode Screenshot](screenshots/task-tracker-dark-mode.png)
 
 
 
