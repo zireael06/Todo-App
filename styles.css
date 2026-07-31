@@ -1,0 +1,658 @@
+/* =========================
+   COLOUR VARIABLES
+========================= */
+
+:root {
+  --background: #F1F5F9;
+  --surface: #FFFFFF;
+  --text: #1E293B;
+  --border: #CBD5E1;
+
+  --primary: #3B82F6;
+  --primary-hover: #2563EB;
+
+  --muted-text: #64748B;
+  --counter-bg: #F8FAFC;
+
+  --high-bg: #fee2e2;
+  --medium-bg: #fef3c7;
+  --low-bg: #dcfce7;
+
+  --high-border: #e74c3c;
+  --medium-border: #f39c12;
+  --low-border: #2ecc71;
+}
+
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+.tracker,
+.text-input,
+.button,
+.editBtn,
+.deleteBtn,
+.priority,
+#taskCounter {
+  transition:
+    background-color .3s ease,
+    color .3s ease,
+    border-color .3s ease,
+    transform .2s ease;
+}
+
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: Inter, sans-serif;
+  margin: 0;
+  padding: 40px;
+}
+
+
+.app {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark {
+  --background: #0F172A;
+  --surface: #1E293B;
+  --text: #F8FAFC;
+  --border: #475569;
+
+  --primary: #60A5FA;
+  --primary-hover: #3B82F6;
+
+  --muted-text: #94A3B8;
+  --counter-bg: #334155;
+
+  --high-bg: #450a0a;
+  --medium-bg: #713f12;
+  --low-bg: #064e3b;
+
+  --high-border: #ef4444;
+  --medium-border: #f59e0b;
+  --low-border: #22c55e;
+}
+
+
+body.dark .tracker {
+  box-shadow: 0 4px 20px rgba(0,0,0,.3);
+}
+
+
+body.dark #taskList li {
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+}
+
+
+/* =========================
+   THEME ICON COLOURS
+========================= */
+
+#theme-toggle .fa-sun {
+  color: #FACC15;
+}
+
+#theme-toggle .fa-moon {
+  color: #FFFFFF;
+}
+
+
+/* =========================
+   MAIN CARD
+========================= */
+
+.tracker {
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(15,23,42,0.06);
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+
+/* =========================
+   THEME BUTTON
+========================= */
+
+#theme-toggle {
+
+  position: fixed;
+  top: 20px;
+  right: 20px;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid var(--border);
+  border-radius: 50%;
+
+  font-size: 1.2rem;
+  line-height: 1;
+
+  z-index: 1000;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+
+  transition:
+    background-color .3s ease,
+    color .3s ease,
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+
+#theme-toggle:hover {
+  transform: translateY(-2px) scale(1.08);
+  box-shadow: 0 8px 18px rgba(0,0,0,.2);
+}
+
+
+#theme-toggle:active {
+  transform: scale(.95);
+}
+
+
+#theme-toggle i {
+  pointer-events: none;
+}
+
+
+#theme-toggle:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+
+/* =========================
+   HEADINGS & ACCESSIBILITY
+========================= */
+
+h1 {
+  text-align: center;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+
+.sr-only {
+
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+
+}
+
+
+/* =========================
+   INPUT AREA
+========================= */
+
+.input-group {
+
+  display: flex;
+  gap: 10px;
+
+}
+
+
+.text-input {
+
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 8px;
+
+}
+
+
+.text-input::placeholder {
+  color: var(--muted-text);
+}
+
+
+.text-input:focus {
+
+  border-color: var(--primary);
+
+  outline: none;
+
+}
+
+
+/* SEARCH BOX */
+
+.search-input {
+
+  position: relative;
+
+  flex: 1;
+
+}
+
+
+.search-input i {
+
+  position: absolute;
+
+  left: 12px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: var(--muted-text);
+
+  pointer-events: none;
+
+}
+
+
+.search-input .text-input {
+
+  padding-left: 35px;
+
+  width: 100%;
+
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.button {
+
+  background: var(--primary);
+
+  color: white;
+
+  border: none;
+
+  padding: 12px 18px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+}
+
+
+.button:hover {
+
+  background: var(--primary-hover);
+
+  transform: translateY(-1px);
+
+}
+
+
+#addTaskBtn {
+
+  width: 52px;
+  height: 52px;
+
+  padding: 0;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  font-size: 1.4rem;
+
+  font-weight: 700;
+
+  box-shadow: 0 4px 10px rgba(59,130,246,.3);
+
+}
+
+
+/* =========================
+   FILTER BUTTONS
+========================= */
+
+.filter-buttons {
+
+  margin-top: 15px;
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 10px;
+
+}
+
+
+.filter-button.active {
+
+  background: #4CAF50;
+
+  font-weight: 600;
+
+}
+
+
+/* =========================
+   TASK LIST
+========================= */
+
+#taskList {
+
+  list-style: none;
+
+  padding: 0;
+
+  margin-top: 20px;
+
+  padding-bottom: 8px;
+
+}
+
+
+/* TASK CARDS */
+
+#taskList li {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 12px;
+
+  padding: 14px 16px;
+
+  border-radius: 16px;
+
+  border-left: 5px solid transparent;
+
+  box-shadow: 0 2px 6px rgba(15,23,42,.06);
+
+  cursor: pointer;
+
+  transition:
+      background-color .3s ease,
+      color .3s ease,
+      border-color .3s ease,
+      transform .2s ease,
+      opacity .3s ease,
+      filter .3s ease;
+}
+
+
+#taskList li:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 14px rgba(15,23,42,.1);
+
+}
+
+
+#taskList li > span:first-child {
+
+  flex: 1;
+
+  word-break: break-word;
+
+}
+
+
+/* =========================
+   PRIORITY LABELS
+========================= */
+
+.priority {
+
+  flex-shrink: 0;
+
+  padding: 2px 8px;
+
+  border-radius: 12px;
+
+  font-size: .8rem;
+
+  font-weight: bold;
+
+  color: white;
+
+}
+
+
+.priority.high {
+
+  background-color: var(--high-border);
+
+}
+
+
+.priority.medium {
+
+  background-color: var(--medium-border);
+
+}
+
+
+.priority.low {
+
+  background-color: var(--low-border);
+
+}
+
+
+/* TASK PRIORITY COLOURS */
+
+#taskList li.high {
+
+  background-color: var(--high-bg);
+
+  border-left: 5px solid var(--high-border);
+
+}
+
+
+#taskList li.medium {
+
+  background-color: var(--medium-bg);
+
+  border-left: 5px solid var(--medium-border);
+
+}
+
+
+#taskList li.low {
+
+  background-color: var(--low-bg);
+
+  border-left: 5px solid var(--low-border);
+
+}
+
+
+/* =========================
+   EDIT & DELETE BUTTONS
+========================= */
+
+.editBtn,
+.deleteBtn {
+
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 4px 6px;
+  transition:
+    transform .2s ease,
+    filter .2s ease;
+}
+
+
+.editBtn:hover,
+.deleteBtn:hover {
+  transform: scale(1.15);
+}
+
+
+.editBtn:active,
+.deleteBtn:active {
+  transform: scale(.95);
+}
+
+
+.deleteBtn {
+  filter: saturate(.9);
+}
+
+
+.deleteBtn:hover {
+  filter: saturate(1.2);
+}
+
+
+
+/* =========================
+   COMPLETED TASK
+========================= */
+
+.completed span:first-child {
+
+  text-decoration: line-through;
+
+  color: var(--muted-text);
+
+}
+
+
+.completed span:first-child::before {
+
+  content: "✔ ";
+
+  color: #22C55E;
+
+  font-weight: bold;
+
+}
+
+
+.completed {
+
+  opacity: .75;
+
+  filter: grayscale(.2);
+
+}
+
+
+/* =========================
+   TASK COUNTER
+========================= */
+
+#taskCounter {
+
+  text-align: center;
+
+  margin-top: 1rem;
+
+  padding: .75rem 1rem;
+
+  background: var(--counter-bg);
+
+  color: var(--text);
+
+  border-radius: 8px;
+
+  font-size: .9rem;
+
+  font-weight: 500;
+
+}
+
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+button:focus-visible,
+input:focus-visible {
+
+  outline: 2px solid var(--primary);
+
+  outline-offset: 2px;
+
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--primary) 15%, transparent);
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:600px) {
+
+  body {
+    padding: 20px;
+  }
+
+
+  #theme-toggle {
+
+    top: 12px;
+    right: 12px;
+
+  }
+
+    .input-group {
+    flex-direction: column;
+  }
+
+  #addTaskBtn {
+    width:100%;
+    border-radius:8px;
+  }
+
+  .filter-buttons {
+    flex-wrap:wrap;
+  } 
+
+}
