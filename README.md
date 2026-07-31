@@ -68,12 +68,11 @@ This means tasks remain available even after refreshing the page.
 
 ---
 
+
 ## Live Demo
 
-_Add your deployed project link here if you publish it using GitHub Pages, Netlify, or another hosting service._
 
-Example:
-
+[View the live application](https://zireael06.github.io/Todo-App/)
 
 
 ---
