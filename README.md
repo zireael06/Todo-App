@@ -1,10 +1,10 @@
 # Task Tracker ✅
 
-A responsive task management application built using **HTML, CSS, and JavaScript**.
+A responsive task management application built with **HTML, CSS, and JavaScript**.
 
 The app allows users to create, organise, search, and manage tasks with priority levels and a dark mode interface.
 
-The project focuses on building a clean, responsive user interface while demonstrating core JavaScript concepts such as DOM manipulation, application state management, and Local Storage.
+The project focuses on a clean, responsive interface while demonstrating DOM manipulation, application state management, modular JavaScript, and Local Storage.
 
 ---
 
@@ -16,25 +16,13 @@ The project focuses on building a clean, responsive user interface while demonst
 
 ## Features
 
-✅ Add new tasks  
-✅ Edit existing tasks  
-✅ Delete tasks  
-✅ Mark tasks as completed  
-✅ Search through tasks  
-✅ Filter tasks by status:
-- All
-- Active
-- Completed
-
-✅ Priority system:
-- High
-- Medium
-- Low
-
-✅ Dark mode toggle  
-✅ Saves tasks using Local Storage  
-✅ Responsive design for different screen sizes  
-✅ Accessible buttons and form labels  
+- Add, edit, delete, and complete tasks
+- Search tasks and filter by status
+- High, medium, and low priority levels
+- Persistent dark mode
+- Local Storage persistence
+- Responsive layouts
+- Accessible buttons and form labels
 
 ---
 
@@ -42,7 +30,7 @@ The project focuses on building a clean, responsive user interface while demonst
 
 - HTML5
 - CSS3
-- JavaScript (ES6 Modules)
+- JavaScript (ES6 modules)
 - Local Storage API
 - Font Awesome Icons
 
@@ -50,20 +38,14 @@ The project focuses on building a clean, responsive user interface while demonst
 
 ## Key Skills Demonstrated
 
-- Semantic HTML5
-- Responsive CSS with Flexbox
-- CSS custom properties (variables)
-- Dark mode implementation
-- JavaScript ES6 modules
-- Modular application architecture
-- DOM manipulation
-- Event-driven programming
+- Semantic HTML
+- Responsive CSS with Flexbox and custom properties
+- Modular JavaScript architecture
+- DOM manipulation and event-driven programming
 - Application state management
 - Factory pattern implementation
 - Local Storage integration
-- Search and filtering functionality
-- Accessibility best practices
-- Git and GitHub workflow
+- Search, filtering, and accessibility
 
 ---
 
@@ -79,15 +61,7 @@ No additional dependencies or installation are required.
 
 ## How It Works
 
-Tasks are managed through a modular JavaScript architecture where task data, application state, storage, and rendering logic are separated into dedicated modules.
-
-When a task is added, edited, completed, or deleted:
-
-1. The task data updates
-2. Changes are saved to Local Storage
-3. The interface re-renders to show the latest data
-
-This means tasks remain available even after refreshing the page.
+Task data, application state, storage, and rendering logic are separated into dedicated modules. When a task is added, edited, completed, or deleted, the state updates, changes are saved to Local Storage, and the interface re-renders.
 
 ---
 
@@ -105,12 +79,10 @@ This means tasks remain available even after refreshing the page.
 
 ## Future Improvements
 
-Possible features to add:
-
 - Due dates
 - Task categories
-- Drag and drop sorting
-- Better inline editing
+- Drag-and-drop sorting
+- Improved inline editing
 - Task completion animations
 - Priority sorting
 
@@ -123,7 +95,6 @@ task-tracker/
 ├── index.html
 ├── styles.css
 ├── README.md
-│
 ├── js/
 │   ├── app.js
 │   ├── dom.js
@@ -138,7 +109,6 @@ task-tracker/
 │   ├── tasks.js
 │   ├── theme.js
 │   └── ui.js
-│
 └── screenshots/
     ├── task-tracker-dark-mode.png
     └── task-tracker-main.png
@@ -148,6 +118,6 @@ task-tracker/
 
 ## Author
 
-Created by **Tim Baker**
+Created by **Tim Baker**.
 
-This project was built to practise modern JavaScript development, including DOM manipulation, modular architecture, state management, Local Storage, responsive design, and accessibility.
+Built to demonstrate modular JavaScript, state management, Local Storage, responsive design, and accessibility.
